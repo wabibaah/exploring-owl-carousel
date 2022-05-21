@@ -7,16 +7,26 @@
     <title>Owl Carousel</title>
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h class="tt">owl carousel</h>
       <div class="owl-carousel owl-theme">
         <img src="../assets/img/img1.png" />
         <img src="../assets/img/img2.png" />
         <img src="../assets/img/img3.png" />
         <img src="../assets/img/img4.png" />
+        <img src="../assets/img/img5.png" />
+        <img src="../assets/img/img6.png" />
+        <img src="../assets/img/img7.png" />
+        <img src="../assets/img/img8.png" />
       </div>
     </div>
     <!-- the jquery min file must come first before the owl carousle min file -->
@@ -24,8 +34,37 @@
     <script src="../assets/js/owl.carousel.min.js"></script>
     <script>
       $(document).ready(function () {
-        $(".owl-carousel").owlCarousel();
+        $(".owl-carousel").owlCarousel({
+          nav: true,
+          navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+          slideBy: 1,
+          items: 3,
+          // margin: 150,
+          autoplay: true,
+          animateIn: "fadeIn",
+          animateOut: "fadeOut",
+          loop: true,
+          responsive: {
+            0: {
+              items: 1,
+            },
+          },
+        });
       });
     </script>
   </body>
+  <!-- the nav is a boolean and by default it is true in my case -->
+  <!-- if you inspect the next and previous icons, they have a class of owl-next and owl-previous and you can style them and the disabled class was added dynamically  -->
+  <!-- now we want the slider to slide by a particular number of items -->
+  <!-- the option is there for items and slideBy and the slideBy must not be greater than the items (3 by default) -->
+  <!-- div.owl-nav > button.owl-prev  -->
+  <!-- div.owl-dots > button.owl-dot  -->
+  <!-- autoplay means that it will be going to the next one automatically and not only when the arrow is pressed or clicked, even on hover it was moving -->
+  <!-- autoplay timeout / autoplayHoverPause / autoPlay speed -->
+  <!-- the animateIn / animateOut was not working when my items were set to two / maybe or more -->
+  <!-- so all these ecommerce websites put their item on 1 and they actually write it on top -->
+  <!-- or create a div that will house h1, h2, and a p and also an image, just try it and see -->
+  <!-- in the inspect the active class is given to the number of items selected and they are moving according to slide by so if it is 2, it will take to the next to, this looks so much like the sliding window -->
+  <!-- we can set the responsiveness so that on big screens, maybe three can appear but on small screens maybe only one can appear .... good luck bro, the hard work is real -->
+  <!-- i think it is mobile first too, so whatever you set for the smaller screens will automatically go for the bigger screens unless you overwrite it , we can take the nav off on mobile screens since we know on smaller screens people will just like to touch and scroll right or left rather than just clicking front and back arrows -->
 </html>

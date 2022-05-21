@@ -4,13 +4,29 @@
 }
 
 .container {
-  /* background: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 1320px;
   margin: 0 auto;
   padding: 5rem 0.5rem;
+  height: 60vh;
+  margin-top: 50px;
+  padding-top: 100px;
 }
 
 img {
-  width: 500px;
-  height: auto;
+  display: inline-block;
+  margin: 0 auto;
+  background: red;
+  max-width: 400px;
+  max-height: 600px;
+  /* aspect-ratio: 52 / 65; */
+}
+
+.owl-prev,
+.owl-next {
+  color: darkcyan !important;
+  font-size: 2rem !important;
+  margin-top: 60px !important;
 }
